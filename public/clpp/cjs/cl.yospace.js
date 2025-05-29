@@ -1,0 +1,9 @@
+(function(){var g={}; var _ = _ || {}
+var f=function(window){var Gw="clpp.yospace.YospacePlugin",Hw=function(){this.a=null;this.g=new _.K(Gw)},Iw=function(){};_.x(Hw,_.pv);Hw.prototype.Lh=function(){return this.a};
+Hw.prototype.onContentWillLoad=function(a,b){var c=this,d,e,f,g,h;return _.I(function(l){if(1==l.a){d=a.getConfiguration();e=d.yospace;if(!e.enabled)return l["return"]();if(typeof window.YospaceAdManagement!==_.Ue)return c.g.error("Yospace enabled but SDK not found."),a.onError(new _.N(_.P,9,7003,"Yospace SDK not found.")),l["return"]();c.g.info("Yospace enabled.");f=a.isLive()?Jw:Kw;a:{var m=b.url;switch(f){case Kw:m=YospaceAdManagement.SessionVOD.create(m);break a;case Jw:m=YospaceAdManagement.SessionLive.create(m);
+break a;default:m=YospaceAdManagement.SessionDVRLive.create(m)}}return _.y(l,m,2)}g=l.f;h=g.getSessionState();if(h!==YospaceAdManagement.SessionState.INITIALISED)return c.g.error("Failed to initialize Yospace session. State:",h,"URL",b.url),a.onError(new _.N(_.P,9,7003,"Yospace session failed to initialize")),l["return"]();a.trigger(new _.L(_.Xg,{detail:g}));b.url=g.getPlaybackUrl();c.g.info("Yospace session initialized. New URL:",b.url);c.a=g;_.A(l)})};
+Hw.prototype.onPlayerWillRelease=function(a){if(this.a){this.g.info("Shutting down Yospace session.");var b=this.a;this.a.shutdown();this.a=null;a.trigger(new _.L(_.Wg,{detail:b}))}};Hw.prototype.id=function(){return"yospace"};_.J(Gw,Hw);Hw.prototype.getSession=Hw.prototype.Lh;Hw.Id="yospace";Iw.prototype.create=function(){return new Hw};_.Qs(new Iw);var Kw=_.kc,Jw="LIVE";};
+if(typeof(module)!="undefined"&&module.exports){var x=require("./cl.core.js");_ = x._;(f.call(g,this));module.exports=g;}
+else if (typeof(define)!="undefined"&&define.amd) {define(["./cl.core"], function(c){_=c._;(f.call(g,this));return g;});}
+else{_=this.clpp._;(f.call(g,this));}
+})();

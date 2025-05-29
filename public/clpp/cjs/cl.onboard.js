@@ -1,0 +1,8 @@
+(function(){var g={}; var _ = _ || {}
+var f=function(window){var EB=function(){this.g=new _.K("clpp.onboard");this.j=new Set},FB=function(a,b){function c(l){return l&&(_.R.startsWith(l,"https://")||_.R.startsWith(l,"http://")||_.R.startsWith(l,"//"))?l:d+l}var d=b.baseUrl;_.R.endsWith(d,"/")||(d+="/");var e=c(b.widevineUrl||"widevine"),f=c(b.playreadyUrl||"playready"),g=c(b.fairplayUrl||"fairplay"),h=new _.Um(a);h.Ya(_.Pd,{licenseUrl:e,videoRobustness:[_.Wb,void 0],audioRobustness:[_.Vb,void 0],persistentStateRequired:!1,distinctiveIdentifierRequired:!1,serverCertificate:null,
+modifiers:{licenseRequest:_.In,licenseResponse:_.Nn}});h.Ya(_.Kd,{licenseUrl:g,certificateUrl:g,modifiers:{licenseRequest:_.Kn,licenseResponse:_.Ln,extractContentId:_.Gn,certificateRequest:_.Mn}});h.Ya(_.Nd,{licenseUrl:f,modifiers:{licenseRequest:_.In}});_.Pm(h)};_.x(EB,_.tt);EB.prototype.a=function(){for(var a=_.w(this.j),b=a.next();!b.done;b=a.next())delete _.Om[b.value];this.j.clear()};
+EB.prototype.h=function(a){a=a.getConfiguration().drm;var b;if(b=!(!a||!a.env))b=a&&a.customData,b=!(!b||!b.baseUrl);b&&(b=a.env,a=a.customData,a={baseUrl:a.baseUrl,widevineUrl:a.widevineUrl,playreadyUrl:a.playreadyUrl,fairplayUrl:a.fairplayUrl},this.g.info("Registering the DRMtoday Onboard environment, name\x3d'"+b+"'"),FB(b,a),this.j.add(b))};EB.prototype.id=function(){return"onboard"};_.J("clpp.onboard.OnboardComponent",EB);_.J("clpp.onboard.register",FB);};
+if(typeof(module)!="undefined"&&module.exports){var x=require("./cl.core.js");_ = x._;(f.call(g,this));module.exports=g;}
+else if (typeof(define)!="undefined"&&define.amd) {define(["./cl.core"], function(c){_=c._;(f.call(g,this));return g;});}
+else{_=this.clpp._;(f.call(g,this));}
+})();
