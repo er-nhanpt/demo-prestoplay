@@ -14,6 +14,7 @@ const player = new clpp.Player(
         authToken: "",
         assetId: "agent-327",
         variantId: "",
+        playReadyVideoRobustness: [2000, 150],
       },
       delayLicenseRequestUntilPlayed: true,
     },
